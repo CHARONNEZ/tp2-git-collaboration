@@ -1,0 +1,24 @@
+name: Integration Continue TP3
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recupérer le code source
+        uses: actions/checkout@v4
+
+      - name: Vérifier la présence du README.md
+        run: |
+          if [ -f README.md ]; then
+            echo "✅ Le fichier README.md existe bien !"
+          else
+            echo "❌ Fichier README.md introuvable !"
+            exit 1
+          fi

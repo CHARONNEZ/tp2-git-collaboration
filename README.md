@@ -1,1 +1,1 @@
-# Projet TP2 Git
+# Projet TP2 Git - Version du Développeur A
